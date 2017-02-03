@@ -14,7 +14,7 @@ import {
 
 } from 'react-native';
 import S from '../styles';
-
+import Soundmaker from './Soundmaker';
 
 var {
     Accelerometer, DeviceAngles
@@ -105,6 +105,7 @@ export default class AccelerometerManager extends Component {
           <Text style={[{color: 'red', margin: 20}, S.button]} onPress={this.handleStop.bind(this)}>Stop</Text> :
           <Text style={[{color: 'green', margin: 20}, S.button]} onPress={this.handleStart.bind(this)}>Start</Text>
         }
+        <Soundmaker accel={this.state.x}/>
       </View>
     );
   }

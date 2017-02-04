@@ -45,6 +45,7 @@ export default class MotionManager extends Component {
       <View style={{
         flex: 1,
         paddingTop: 100,
+        backgroundColor: '#666666'
       }}>
         <Text onPress={this.handleNavigationPress.bind(this, routes.accelerometer)}>Accelerometer</Text>
 

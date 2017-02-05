@@ -18,6 +18,8 @@
 	import S from '../styles';
 	import Soundmaker from './Soundmaker';
 	import AccelBar from './AccelBar';
+	import GeolocationManager from './GeolocationManager';
+
 
 	import {
 	    Accelerometer, DeviceAngles
@@ -138,7 +140,7 @@
 		      </View>
 		    <View style={{flex:1, alignItems: 'center', justifyContent:'space-between',flexDirection:'row'}}>
 		    		<View style={{flexDirection:'row'}}>
-							<Text style={[S.mediumFigure,{width:130,textAlign:'right'}]}>1256</Text><Text style={{fontSize:20,color:'#aaaaaa',alignSelf:'flex-end',marginBottom:7,marginLeft:5}}>m</Text>
+							<GeolocationManager/><Text style={{fontSize:20,color:'#aaaaaa',alignSelf:'flex-end',marginBottom:7,marginLeft:5}}>m</Text>
 						</View>
 						<TouchableHighlight onPress={this.enableSound.bind(this)} style={{borderRadius: 36}}>
 							{ 

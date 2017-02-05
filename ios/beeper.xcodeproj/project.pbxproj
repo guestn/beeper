@@ -27,7 +27,6 @@
 		4D5E73ED1E440291001DE36D /* tone440.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73EC1E440291001DE36D /* tone440.mp3 */; };
 		4D5E73F41E440E92001DE36D /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5E73F31E440E80001DE36D /* libRNSound.a */; };
 		4D5E73F61E451732001DE36D /* tone440.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73F51E451732001DE36D /* tone440.wav */; };
-		4D5E73F81E451C15001DE36D /* eagle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73F71E451C15001DE36D /* eagle.jpg */; };
 		4D5E74061E45485D001DE36D /* tone13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73F91E45485D001DE36D /* tone13.wav */; };
 		4D5E74071E45485D001DE36D /* tone12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73FA1E45485D001DE36D /* tone12.wav */; };
 		4D5E74081E45485D001DE36D /* tone11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E73FB1E45485D001DE36D /* tone11.wav */; };
@@ -42,6 +41,7 @@
 		4D5E74111E45485D001DE36D /* tone2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E74041E45485D001DE36D /* tone2.wav */; };
 		4D5E74121E45485D001DE36D /* tone1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E74051E45485D001DE36D /* tone1.wav */; };
 		4D5E74141E468EE3001DE36D /* launchScreen-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E74131E468EE2001DE36D /* launchScreen-bg.jpg */; };
+		4D5E74461E46B6B7001DE36D /* icon-basic-1080.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5E74451E46B6B7001DE36D /* icon-basic-1080.png */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
@@ -284,7 +284,6 @@
 		4D5E73EC1E440291001DE36D /* tone440.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tone440.mp3; sourceTree = "<group>"; };
 		4D5E73EE1E440E80001DE36D /* RNSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		4D5E73F51E451732001DE36D /* tone440.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone440.wav; sourceTree = "<group>"; };
-		4D5E73F71E451C15001DE36D /* eagle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eagle.jpg; sourceTree = "<group>"; };
 		4D5E73F91E45485D001DE36D /* tone13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone13.wav; sourceTree = "<group>"; };
 		4D5E73FA1E45485D001DE36D /* tone12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone12.wav; sourceTree = "<group>"; };
 		4D5E73FB1E45485D001DE36D /* tone11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone11.wav; sourceTree = "<group>"; };
@@ -299,6 +298,7 @@
 		4D5E74041E45485D001DE36D /* tone2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone2.wav; sourceTree = "<group>"; };
 		4D5E74051E45485D001DE36D /* tone1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tone1.wav; sourceTree = "<group>"; };
 		4D5E74131E468EE2001DE36D /* launchScreen-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "launchScreen-bg.jpg"; sourceTree = "<group>"; };
+		4D5E74451E46B6B7001DE36D /* icon-basic-1080.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-basic-1080.png"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -524,9 +524,9 @@
 				00E356EF1AD99517003FC87E /* beeperTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				4D5E74131E468EE2001DE36D /* launchScreen-bg.jpg */,
+				4D5E74451E46B6B7001DE36D /* icon-basic-1080.png */,
 				4D5E73EC1E440291001DE36D /* tone440.mp3 */,
 				4D5E73F51E451732001DE36D /* tone440.wav */,
-				4D5E73F71E451C15001DE36D /* eagle.jpg */,
 				4D5E73F91E45485D001DE36D /* tone13.wav */,
 				4D5E73FA1E45485D001DE36D /* tone12.wav */,
 				4D5E73FB1E45485D001DE36D /* tone11.wav */,
@@ -915,7 +915,6 @@
 				4D5E73F61E451732001DE36D /* tone440.wav in Resources */,
 				4D5E740B1E45485D001DE36D /* tone8.wav in Resources */,
 				4D5E74091E45485D001DE36D /* tone10.wav in Resources */,
-				4D5E73F81E451C15001DE36D /* eagle.jpg in Resources */,
 				4D5E74121E45485D001DE36D /* tone1.wav in Resources */,
 				4D5E740F1E45485D001DE36D /* tone4.wav in Resources */,
 				4D5E74141E468EE3001DE36D /* launchScreen-bg.jpg in Resources */,
@@ -927,6 +926,7 @@
 				4D5E740E1E45485D001DE36D /* tone5.wav in Resources */,
 				4D5E74101E45485D001DE36D /* tone3.wav in Resources */,
 				4D5E74071E45485D001DE36D /* tone12.wav in Resources */,
+				4D5E74461E46B6B7001DE36D /* icon-basic-1080.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

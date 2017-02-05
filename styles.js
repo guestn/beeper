@@ -1,13 +1,9 @@
 export default Style = {
 	container: {
 		flex: 1,
-		borderWidth: 1,
-		borderColor: 'black',
-		borderStyle: 'solid',
 		flexDirection: 'row',
 		padding: 20,
 		backgroundColor: '#222222',
-		
 	},
 	AccelBarContainer: {
 		backgroundColor: '#888888',
@@ -45,13 +41,14 @@ export default Style = {
 	},
 	bigButtonText: {
 		color: '#36DBA8',
-		fontSize: 24,
+		fontSize: 20,
 	},
 	bigButton: {
 		marginTop: 10,
 		marginBottom: 10
 	},
 	debug: {
+		opacity: 0,
 		position:'absolute',
 		top: 30,
 		left:30

@@ -11,7 +11,9 @@
 	  View,
 	  Image,
 	  DeviceEventEmitter,
-	  NativeModules
+	  NativeModules,
+	  TouchableHighlight,
+	  Dimensions
 	} from 'react-native';
 	import S from '../styles';
 	import Soundmaker from './Soundmaker';
@@ -20,11 +22,14 @@
 	import {
 	    Accelerometer, DeviceAngles
 	} from 'NativeModules';
+
+	const {height, width} = Dimensions.get('window')
 	
 	Accelerometer.setAccelerometerUpdateInterval(0.2);
 	
 	DeviceAngles.setDeviceMotionUpdateInterval(0.2);
 	
+
 	
 	export default class AccelerometerManager extends Component {
 		constructor(props) {
@@ -57,6 +62,8 @@
 	        yaw: data.yaw.toFixed(2)
 	      });
 			}.bind(this))
+			
+			console.log(height)
 	  }
 	  
 	  componentWillUnmount() {
@@ -87,14 +94,21 @@
 	    });
 	  }
 	  
+	  enableSound() {
+		  console.log('true')
+		  this.setState({
+			  sound: !this.state.sound
+			})
+	  }
+	  
 	  
 	  
 	  render() {
 	    //console.log(this.state);
 	    return (
-		    <View style={[S.container,{flexDirection:'column'}]}>
+		    <View style={[S.container,{flexDirection:'column',paddingBottom:64}]}>
 		    
-			    <View style={{flex:2, borderColor:'red',borderWidth:1,flexDirection:'row'}}>
+			    <View style={{flex:2, flexDirection:'row'}}>
 			     
 			      <View style={{
 			        flex: 2,
@@ -122,11 +136,17 @@
 			      	</View>
 			      </View>		      
 		      </View>
-		    <View style={{flex:1, alignItems: 'center', justifyContent:'space-between',flexDirection:'row',borderColor:'purple',borderWidth:1}}>
+		    <View style={{flex:1, alignItems: 'center', justifyContent:'space-between',flexDirection:'row'}}>
 		    		<View style={{flexDirection:'row'}}>
 							<Text style={[S.mediumFigure,{width:130,textAlign:'right'}]}>1256</Text><Text style={{fontSize:20,color:'#aaaaaa',alignSelf:'flex-end',marginBottom:7,marginLeft:5}}>m</Text>
 						</View>
-						<Image style={{width: 96, height: 96,}} source={require('../assets/sound-icon-off.png')}/>
+						<TouchableHighlight onPress={this.enableSound.bind(this)} style={{borderRadius: 36}}>
+							{ 
+								(this.state.sound) ?
+								<Image  style={{width: 72, height: 72}} source={require('../assets/sound-icon-off.png')}/> :
+								<Image  style={{width: 72, height: 72}} source={require('../assets/sound-icon-on.png')}/>
+							}
+						</TouchableHighlight>
 					</View>
 
 				</View>

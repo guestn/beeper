@@ -12,26 +12,28 @@ import {
   View,
   NavigatorIOS,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  StatusBar,
+  Dimensions
 } from 'react-native';
 //import MotionManager from './components/Motion';
 import GyroscopeManager from './components/GyroscopeManager';
 import AccelerometerManager from './components/AccelerometerManager';
 import MagnetometerManager from './components/Magnetometer';
+import SettingsManager from './components/SettingsManager';
 import S from './styles';
 
+const {height, width} = Dimensions.get('window')
+
+
 const routes = {
-  gyroscope: {
-    title: 'Gyroscope',
-    component: GyroscopeManager
-  },
   accelerometer: {
     title: 'Live',
     component: AccelerometerManager
   },
-  magnetometer: {
-    title: 'Magnetometer',
-    component: MagnetometerManager
+  settings: {
+    title: 'Settings',
+    component: SettingsManager
   }
 };
 
@@ -44,17 +46,18 @@ export class MotionManager extends Component {
     return (
       <View style={{
         flex: 1,
-        paddingTop: 100,
+        paddingTop: 20,
 				backgroundColor: '#222222',
 				padding:20
       }}>
+      	<Image style={{height:122, width:250, marginTop:40, marginBottom:40,alignSelf:'center'}} source={require('./assets/icon-basic-1080.png')}/>
         <TouchableHighlight style={[S.button, S.bigButton, {flexDirection:'row', justifyContent:'space-between'}]} onPress={this.handleNavigationPress.bind(this, routes.accelerometer)}>
         	<View style={{flex:1,flexDirection:'row', justifyContent:'space-between'}}>
         		<Text style={S.bigButtonText}>Go Live</Text>
         		<Image style={{width: 24, height: 24,}} source={require('./assets/livestream-icon-48.png')}/>
 					</View>
 				</TouchableHighlight>
-        <TouchableHighlight style={[S.button, S.bigButton, {flexDirection:'row', justifyContent:'space-between'}]} onPress={this.handleNavigationPress.bind(this, routes.gyroscope)}>
+        <TouchableHighlight style={[S.button, S.bigButton, {flexDirection:'row', justifyContent:'space-between'}]} onPress={this.handleNavigationPress.bind(this, routes.settings)}>
           <View style={{flex:1,flexDirection:'row', justifyContent:'space-between'}}>
         		<Text style={S.bigButtonText}>Settings</Text>
 						<Image style={{width: 24, height: 24,}} source={require('./assets/gear-icon-48.png')}/>
@@ -73,20 +76,24 @@ routes.motion = {
 export class App extends Component {
   render() {
     return (
-      <NavigatorIOS
-        style={{
-          flex: 1,
-        }}
-        initialRoute={routes.motion}
-        tintColor='white'
-        barTintColor='#000'
-        backGroundColor='#000'
-        titleTextColor='#36DBA8'
-        translucent={false}
-        
-         />
+	    <View style={{flex:1}}>
+	      <StatusBar
+					barStyle="light-content"
+				/>
+	      <NavigatorIOS
+	        style={{
+	          flex: 1,
+	        }}
+	        initialRoute={routes.motion}
+	        tintColor='#aaa'
+	        barTintColor='#111'
+	        backGroundColor='#111'
+	        titleTextColor='#36DBA8'
+	        translucent={false}
+	      />
+      </View>
     );
   }
 };
 
-AppRegistry.registerComponent('beeper', () => App);
+AppRegistry.registerComponent('beeper', () => App)

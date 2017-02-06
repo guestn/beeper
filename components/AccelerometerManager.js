@@ -1,7 +1,6 @@
 	/**
 	 * AccelerometerManager
 	 *
-	 * Created by Patrick Williams in beautiful Seattle, WA.
 	 */
 	'use strict';
 	
@@ -30,7 +29,6 @@
 	Accelerometer.setAccelerometerUpdateInterval(0.2);
 	
 	DeviceAngles.setDeviceMotionUpdateInterval(0.2);
-	
 
 	
 	export default class AccelerometerManager extends Component {
@@ -46,26 +44,27 @@
 	      gyro: false,
 	      sound: false
 	  	}
+	  	this.handleStart = this.handleStart.bind(this)
 		}
 	   
 	  componentDidMount() {
-	    DeviceEventEmitter.addListener('AccelerationData', function (data) {
+	    DeviceEventEmitter.addListener('AccelerationData', (data) => {
 	      this.setState({
 	        x: data.acceleration.x.toFixed(3),
 	        y: data.acceleration.y.toFixed(3),
 	        z: data.acceleration.z.toFixed(3)
 	      });
-	    }.bind(this));
+	    });
 	    
-	    DeviceEventEmitter.addListener('AnglesData', function (data) {
+	    DeviceEventEmitter.addListener('AnglesData', (data) => {
 	      this.setState({
 	        pitch: data.pitch.toFixed(2),
 	        roll: data.roll.toFixed(2),
 	        yaw: data.yaw.toFixed(2)
 	      });
-			}.bind(this))
+			})
 			
-			console.log(height)
+			this.handleStart();
 	  }
 	  
 	  componentWillUnmount() {
@@ -97,7 +96,6 @@
 	  }
 	  
 	  enableSound() {
-		  console.log('true')
 		  this.setState({
 			  sound: !this.state.sound
 			})
@@ -106,7 +104,8 @@
 	  
 	  
 	  render() {
-	    //console.log(this.state);
+		  const accelDisplay = 10 * ((parseFloat(this.state.z) + 1).toFixed(1));
+
 	    return (
 		    <View style={[S.container,{flexDirection:'column',paddingBottom:64}]}>
 		    
@@ -129,24 +128,26 @@
 			          <Text style={[{color: 'red', margin: 20}, S.button]} onPress={this.handleStop.bind(this)}>Stop</Text> :
 			          <Text style={[{color: 'green', margin: 20}, S.button]} onPress={this.handleStart.bind(this)}>Start</Text>
 			        }
-			        <Soundmaker accel={this.state.z}/>
+			        <Soundmaker accel={this.state.z} soundEnabled={this.state.sound}/>
 			      </View>
 			      
 			      <View style={{flex: 3,justifyContent:'center' }}>
 			      	<View style={S.bigFigureContainer}>
-			      		<Text style={[S.bigFigure,{alignSelf:'center'}]}>2.3</Text>
+			      		<Text style={[S.bigFigure,{alignSelf:'center'}]}>{accelDisplay}</Text>
 			      	</View>
 			      </View>		      
+
 		      </View>
-		    <View style={{flex:1, alignItems: 'center', justifyContent:'space-between',flexDirection:'row'}}>
+					
+					<View style={{flex:1, alignItems: 'center', justifyContent:'space-between',flexDirection:'row'}}>
 		    		<View style={{flexDirection:'row'}}>
 							<GeolocationManager/><Text style={{fontSize:20,color:'#aaaaaa',alignSelf:'flex-end',marginBottom:7,marginLeft:5}}>m</Text>
 						</View>
 						<TouchableHighlight onPress={this.enableSound.bind(this)} style={{borderRadius: 36}}>
 							{ 
 								(this.state.sound) ?
-								<Image  style={{width: 72, height: 72}} source={require('../assets/sound-icon-off.png')}/> :
-								<Image  style={{width: 72, height: 72}} source={require('../assets/sound-icon-on.png')}/>
+								<Image  style={{width: 96, height: 96}} source={require('../assets/sound-icon-off.png')}/> :
+								<Image  style={{width: 96, height: 96}} source={require('../assets/sound-icon-on.png')}/>
 							}
 						</TouchableHighlight>
 					</View>

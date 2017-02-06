@@ -35,10 +35,11 @@
 	  
 	  
 	  render() {
-	    //console.log(this.state);
+		  const barHeight = 200 * (parseFloat(this.props.accel) + 0.9);
+		  
 	    return (
 	      <View style={S.AccelBarContainer}>
-					<View style={S.AccelBar}></View>
+					<View style={[S.AccelBar,{height:barHeight}]}></View>
 	      </View>
 	    );
 	  }

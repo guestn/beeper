@@ -1,8 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Beeper App
  */
+'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -14,16 +13,16 @@ import {
   Image,
   TouchableHighlight,
   StatusBar,
-  Dimensions
+  //Dimensions
 } from 'react-native';
-//import MotionManager from './components/Motion';
+
 import GyroscopeManager from './components/GyroscopeManager';
 import AccelerometerManager from './components/AccelerometerManager';
 import MagnetometerManager from './components/Magnetometer';
 import SettingsManager from './components/SettingsManager';
 import S from './styles';
 
-const {height, width} = Dimensions.get('window')
+//const {height, width} = Dimensions.get('window')
 
 
 const routes = {
@@ -45,10 +44,11 @@ export class MotionManager extends Component {
   render() {
     return (
       <View style={{
-        flex: 1,
-        paddingTop: 20,
+	      flex:1,
+	      paddingTop: 20,
 				backgroundColor: '#222222',
-				padding:20
+				padding:20,
+				paddingBottom: 64
       }}>
       	<Image style={{height:122, width:250, marginTop:40, marginBottom:40,alignSelf:'center'}} source={require('./assets/icon-basic-1080.png')}/>
         <TouchableHighlight style={[S.button, S.bigButton, {flexDirection:'row', justifyContent:'space-between'}]} onPress={this.handleNavigationPress.bind(this, routes.accelerometer)}>
@@ -63,12 +63,15 @@ export class MotionManager extends Component {
 						<Image style={{width: 24, height: 24,}} source={require('./assets/gear-icon-48.png')}/>
         	</View>
 				</TouchableHighlight>
+				<View style={{ position:'absolute',bottom:74, left:0, right: 0}}>
+					<Text style={{color:'#888', textAlign:'center', fontSize: 12}}>Copyright 2017 guest+guest</Text>
+				</View>
       </View>
     );
   }
 };
 
-routes.motion = {
+routes.homepage = {
   title: 'Beeper',
   component: MotionManager
 };
@@ -84,7 +87,7 @@ export class App extends Component {
 	        style={{
 	          flex: 1,
 	        }}
-	        initialRoute={routes.motion}
+	        initialRoute={routes.homepage}
 	        tintColor='#aaa'
 	        barTintColor='#111'
 	        backGroundColor='#111'

@@ -10,7 +10,11 @@ export default Style = {
     flex: 1,
     justifyContent: 'flex-end',
     padding: 10,
-    borderRadius: 10
+    borderRadius: 10,
+    shadowColor: 'black',
+		shadowOpacity: 0.3,
+		shadowOffset: {width:0, height:5},
+		shadowRadius: 10
 	},
 	AccelBar: {
 		backgroundColor: '#36DBA8',
@@ -20,6 +24,14 @@ export default Style = {
 		shadowColor: 'white',
 		shadowOpacity: 0.5,
 		shadowRadius: 5
+	},
+	settingsRow: {
+		height: 96, 
+		flexDirection: 'column', 
+		alignItems:'center',
+		borderBottomWidth: 1,
+		borderBottomColor: '#444',
+		marginBottom: 10
 	},
 	bigFigureContainer: {
 		alignItems: 'center'
@@ -31,6 +43,14 @@ export default Style = {
 	mediumFigure: {
 		color: 'white',
 		fontSize: 50,		
+	},
+	smallText: {
+		color: 'white',
+		fontSize: 20,				
+	},
+	mediumText: {
+		color: 'white',
+		fontSize: 30,				
 	},
 	button: {
 		padding: 10,
@@ -45,10 +65,18 @@ export default Style = {
 	},
 	bigButton: {
 		marginTop: 10,
-		marginBottom: 10
+		marginBottom: 30,
+		backgroundColor: '#222222',
+		shadowColor: 'black',
+		shadowOpacity: 0.3,
+		shadowOffset: {width:0, height:5},
+		shadowRadius: 10
+	},
+	slider: {
+		flex:1,
 	},
 	debug: {
-		opacity: 0,
+		opacity: 0.0,
 		position:'absolute',
 		top: 30,
 		left:30

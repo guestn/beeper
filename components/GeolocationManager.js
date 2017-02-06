@@ -11,7 +11,6 @@
 	} from 'react-native';
 	import S from '../styles';
 
-	
 
   const watchID: ?number = null;
 
@@ -19,8 +18,8 @@
 	export default class GeolocationManager extends Component {
 		constructor(props) {
 			super(props);
-			 this.state = {
-		   	altitude: 0
+			this.state = {
+		  	altitude: 0
 	  	}
 		}
 	   
@@ -36,7 +35,6 @@
 	    );
 			this.watchID = navigator.geolocation.watchPosition((position) => {
       	var lastPosition = JSON.stringify(position);
-				this.setState({lastPosition});
     	});
 	  }
 	  

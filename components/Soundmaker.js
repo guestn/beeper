@@ -66,6 +66,8 @@ export default class Soundmaker extends Component {
 		});
 		
 */
+
+	// plays 1 tone of correct pitch
 		let tonePitch = 20 * (parseFloat(this.props.accel) + 0.9);
 
 		tonePitch = Math.floor(tonePitch);
@@ -83,12 +85,18 @@ export default class Soundmaker extends Component {
   }
   
   createBeepChain() {
+	  
+	  // decides whether to play a sound every <interval> ms
+	  
+	  const interval = 200;
 
 	  intervalListener = setInterval(
 	  
 		  () => {
 			  if (this.props.accel >= -0.9 && this.props.accel != 0) {
-				  this.handlePlay();
+				  if (this.props.soundEnabled) {
+				 		this.handlePlay();
+				  }
 				  this.setState({
 					  message: 'YES'
 				  })
@@ -97,7 +105,7 @@ export default class Soundmaker extends Component {
 					  message: 'NO'
 				  })
 			  }
-		  }, 200);
+		  }, interval);
 		  
   }
   
